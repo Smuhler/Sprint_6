@@ -9,8 +9,8 @@ metro_station_buttons = [(By.XPATH, './/button[@value="177"]'),
 phone_input = (By.XPATH, './/input[@placeholder="* Телефон: на него позвонит курьер"]')
 next_step_button = (By.XPATH, './/button[text()="Далее"]')
 datepicker_input = (By.XPATH, './/input[@placeholder="* Когда привезти самокат"]')
-datepicker_day_selects = [(By.XPATH, './/div[@aria-label="Choose пятница, 28-е июня 2024 г."]'),
-                          (By.XPATH, './/div[@aria-label="Choose четверг, 13-е июня 2024 г."]')]
+datepicker_day_selects = [(By.XPATH, './/div[@class="react-datepicker__day react-datepicker__day--028"]'),
+                          (By.XPATH, './/div[@class="react-datepicker__day react-datepicker__day--013"]')]
 rental_period_listbox = (By.XPATH, './/div[text()="* Срок аренды"]')
 rental_period_listbox_items = [(By.XPATH, './/div[text()="сутки"]'),
                                (By.XPATH, './/div[text()="семеро суток"]')]
@@ -19,4 +19,4 @@ gray_hopelessness_checkbox = (By.ID, 'grey')
 comment_input = (By.XPATH, './/input[@placeholder="Комментарий для курьера"]')
 complete_order_button = (By.XPATH, './/div[@class="Order_Buttons__1xGrp"]//button[text()="Заказать"]')
 agree_order_button = (By.XPATH, './/button[text()="Да"]')
-order_done_text = (By.XPATH, './/div[@class="Order_ModalHeader__3FDaJ"]')
+order_done_text = (By.XPATH, './/div[text()[contains(.,"Заказ оформлен")]]')
