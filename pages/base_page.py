@@ -1,6 +1,7 @@
 import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators.main_page_locators import *
 
 
 class BasePage:
@@ -11,6 +12,10 @@ class BasePage:
     @allure.step('Кликаем на элемент по локатору {locator}')
     def click_element(self, locator):
         WebDriverWait(self.driver, 5).until(expected_conditions.element_to_be_clickable(locator)).click()
+
+    @allure.step('Соглашаемся на куки')
+    def confirm_rcc(self):
+        WebDriverWait(self.driver, 5).until(expected_conditions.element_to_be_clickable(rcc_confirm_button)).click()
 
     @allure.step('Получаем текст элемента по локатору {locator}')
     def get_text_from_visible_element(self, locator):
@@ -36,3 +41,7 @@ class BasePage:
     @allure.step('Проверяем на какой странице находимся')
     def check_current_url(self):
         return self.driver.current_url
+
+    @allure.step('Проверяем отображение элемента на экране')
+    def is_visible_element(self, locator):
+        return WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(locator))

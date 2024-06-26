@@ -24,7 +24,7 @@ class OrderPage(BasePage):
 
     @allure.step('Проверяем отображение на экране текста подтверждения заказа')
     def get_order_done_text(self):
-        return WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(order_done_text))
+        return self.is_visible_element(order_done_text)
 
     @allure.step(f'Кликаем на логотип "Самокат"')
     def logo_scooter_click(self):
